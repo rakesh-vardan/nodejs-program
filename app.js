@@ -1,4 +1,5 @@
 const readline = require('readline');
+const chalk = require('chalk');
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -7,10 +8,13 @@ const rl = readline.createInterface({
 
 const reverseGivenInput = () => {
     rl.question('Enter Input: \n', (input) => {
-        if (input === 'exit') return rl.close();
+        if (input === 'exit') {
+            console.log(chalk.red.inverse('Exiting the program!'));
+            return rl.close();
+        }
         else {
             const output = input.split("").reverse().join("");
-            console.log(`Output is: \n${output}`);
+            console.log(`Output is: \n${chalk.green.inverse(output)}`);
             reverseGivenInput();
         }
     });
