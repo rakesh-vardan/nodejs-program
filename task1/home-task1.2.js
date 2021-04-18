@@ -1,5 +1,5 @@
-const fs = require('fs');
-const csv = require('csvtojson');
+import { appendFileSync } from 'fs';
+import csv from 'csvtojson';
 
 const CSV_FILE_PATH = 'csv/nodejs-hw1-ex1.csv';
 const OUTPUT_FILE_NAME = 'output.txt';
@@ -18,7 +18,7 @@ const convertKeysToLowerCase = (element) => Object.fromEntries(
 );
 
 const writeToTextFile = (element) => {
-    fs.appendFileSync(OUTPUT_FILE_NAME, JSON.stringify(element) + "\r\n", (error) => {
+    appendFileSync(OUTPUT_FILE_NAME, JSON.stringify(element) + "\r\n", (error) => {
         if (error) {
             console.log('An error occured while writing the JSON object to file!');
             return console.log(error);
