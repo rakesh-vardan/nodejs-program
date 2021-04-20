@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node dist/app.js",
+    "start": "node dist/app.js",
     "build": "tsc",
+    "heroku-prebuild": "npm i typescript",
     "dev": "concurrently --kill-others \"tsc -w\" \"nodemon dist/app.js\""
   },
   "keywords": [],
