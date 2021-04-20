@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc && node dist/app.js",
+    "build": "tsc",
+    "dev": "concurrently --kill-others \"tsc -w\" \"nodemon dist/app.js\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^6.0.2",
     "express": "^4.17.1",
     "joi": "^17.4.0",
     "swagger-ui-express": "^4.1.6",
